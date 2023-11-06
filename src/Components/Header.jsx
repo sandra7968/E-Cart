@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function Header() {
   return (
     <div>
-        <Navbar bg="dark" data-bs-theme="dark" className='position-fixed top-0 w-100 mb-5'>
+        <Navbar style={{zIndex:'1'}} bg="dark" data-bs-theme="dark" className='position-fixed top-0 w-100 mb-5'>
       <Container>
         <Navbar.Brand><Link to={'/'} style={{textDecoration:'none',color:'white',fontWeight:'bold'}}><i className='fa-solid fa-truck-fast me-2'></i>E-Cart</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
