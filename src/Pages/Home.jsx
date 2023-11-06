@@ -1,9 +1,12 @@
 import React from 'react'
 import { Row, Col , Card, Button} from 'react-bootstrap'
 import useFetch from '../Hooks/useFetch'
+import { useDispatch } from 'react-redux'
+import { addToWishlist } from '../redux/slices/wishlistSlice'
 
 function Home() {
   const data = useFetch('https://dummyjson.com/products')
+  const dispatch = useDispatch()
   return (
     <Row className='ms-5' style={{marginTop:'100px'}}>
      { 
@@ -18,7 +21,7 @@ function Home() {
         <h5  style={{height:'30px', color:'beige'}}>${product?.price}</h5>
         </Card.Text>
         <div className='d-flex justify-content-between'>
-          <Button className='btn btn-dark'><i className="fa-solid fa-heart text-danger "></i></Button>
+          <Button onClick={()=>dispatch(addToWishlist(product))} className='btn btn-dark'><i className="fa-solid fa-heart text-danger "></i></Button>
           <Button className='btn btn-dark'><i className="fa-solid fa-cart-plus text-success"></i></Button>
   
         </div>
